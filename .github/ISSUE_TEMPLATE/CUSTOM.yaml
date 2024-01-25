@@ -1,0 +1,11 @@
+name: Task
+description: Простой отчет
+title: "[ Task ]: -"
+body:
+  - type: textarea
+    id: main-area
+    attributes:
+      label: "Issue: Шаблон простого отчета."
+      description: "Приведите любую информацию"
+    validations:
+      required: true

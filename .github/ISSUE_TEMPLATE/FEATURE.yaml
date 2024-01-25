@@ -1,0 +1,175 @@
+name: Feature
+description: Добавление функционала
+title: "[ Feature  ]: -"
+body:
+  #1
+  - type: markdown
+    attributes:
+      value: "## 1. Определение"
+  #1.1
+  - type: textarea
+    id: short-description
+    attributes:
+      label: 1.1. Краткое описание БП
+      description: Дайте краткое описание бизнес процесса
+      placeholder: Краткое описание назначения БП.
+    validations:
+      required: true
+  #1.2
+  - type: textarea
+    id: participants
+    attributes:
+      label: 1.2. Участники БП
+      description: Перечислите участников бизнес процесса, связанные с этим бизнес процессом
+      placeholder: |
+        Например:
+          - Пользователь  
+          - Администратор
+          - Граф
+          - Бот
+          - Внешний контракт (контракт другого продукта)
+          - Внешний сервис
+          - др.
+    validations:
+      required: true
+  #1.3
+  - type: textarea
+    id: state
+    attributes:
+      label: 1.3. Предварительное состояние (когда доступна)
+      description: Укажите начальные условия выполнения
+      placeholder: |
+        Откуда запускается БП
+        Условия при котором БП доступен для исполнения
+    validations:
+      required: true
+  #1.4
+  - type: textarea
+    id: launch-state
+    attributes:
+      label: 1.4. Запускающее событие
+      description: Укажите какое событие будет просле запуска этого бизнес процесса
+      placeholder: |
+        Что запускает БП: например переход проекта в другой этап или 
+        изменение значения флага администратором.
+    validations:
+      required: true
+  #1.5
+  - type: textarea
+    id: aim
+    attributes:
+      label: 1.5. Цели
+      description: Укажите результат, который вы хотели получить по итогу бизнес процесса
+      placeholder: |
+        Что должно произойти по итогу БП
+    validations:
+      required: true
+  #1.6
+  - type: textarea
+    id: result-state
+    attributes:
+      label: 1.6. Результирующее состояние
+      description: Укажите, что будет отображаться по итогу бизнес процесса
+      placeholder: |
+        Что отображается после БП.
+    validations:
+      required: true
+  #2
+  - type: markdown
+    attributes:
+      value: "## 2. Ход событий"
+  #2.1
+  - type: textarea
+    id: to-do
+    attributes:
+      label: 2.1. Порядок действий
+      description: Опишите общий порядок действий пользователя для достижения цели бизнес процесса. (Кратко и лаконично)
+    validations:
+      required: true
+  #2.2
+  - type: textarea
+    id: errors-events
+    attributes:
+      label: 2.2 Ошибки и события
+      description: К каждому пункту(Пример - Ошибка 1) приведите сигнатуру и описание (когда должно вызываться и что передаваться в аргументах)
+      placeholder: |
+        2.2.1 Ошибка 1.
+
+        2.2.2 Событие 1.
+    validations:
+      required: true
+  #3
+  - type: markdown
+    attributes:
+      value: "## 3. Описание модели и поведения"
+  #3.1
+  - type: textarea
+    id: data-model
+    attributes:
+      label: 3.1 Модель данных
+      description: Приведите модель, показывающую ввод, перемещение и обработку данных
+    validations:
+      required: true
+  #3.2
+  - type: textarea
+    id: tokenomics
+    attributes:
+      label: 3.2 Токеномика
+      description: Приведите данные о токеномике
+    validations:
+      required: true
+  #3.3
+  - type: textarea
+    id: addition-data
+    attributes:
+      label: 3.3 Дополнительные формулы расчета и модели поведения
+      description: Приведите дополнительные данные для подробного описания модели и поведения
+    validations:
+      required: true
+  #4
+  - type: markdown
+    attributes:
+      value: "## 4. Пользовательский интерфейс (Если есть)"
+  #4.1
+  - type: textarea
+    id: Performance
+    attributes:
+      label: 4.1 Представление
+      description: Графической отображение интерфейса с кодами для описания интерфейса (мокап).
+    validations:
+      required: true
+  #4.2
+  - type: textarea
+    id: Behaviour
+    attributes:
+      label: 4.2 Поведение элементов управления
+      description:
+      placeholder: |
+        >| Название | Тип | Поведение | Комментарий |
+        >|:-:|:-:|:-:|:-:|
+        >|команда [наименование команды](#31-наименования-команды)| кнопка | дизеблится если не выполнено предварительное состояние | - |  
+        >| поле FOO | текст | не редактируется | - |
+        >| поле FOO | список с поиском | Видим и доступен всегда | список пользователей в роли `Менеджер` |
+    validations:
+      required: true
+  #4.3
+  - type: textarea
+    id: picture
+    attributes:
+      label: 4.3 Изображения дизайна
+      description: Добавьте изображения, скриншоты дизайна.
+    validations:
+      required: true
+  #5
+  - type: markdown
+    attributes:
+      value: "## 5. Tasks list"
+  - type: textarea
+    id: task-list
+    attributes:
+      label: 5.1 Tasks list
+      placeholder: |
+        - [ ] Task first
+        - [ ] Task second
+    validations:
+      required: true

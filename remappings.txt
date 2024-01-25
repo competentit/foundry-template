@@ -1,0 +1,3 @@
+forge-deploy/=node_modules/forge-deploy/contracts/
+forge-deploy-proxy/=node_modules/forge-deploy-proxy/src
+@openzeppelin/=node_modules/@openzeppelin/

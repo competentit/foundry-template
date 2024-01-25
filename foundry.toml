@@ -1,0 +1,13 @@
+[profile.default]
+solc_version = "0.8.20"
+optimizer = true
+optimizer_runs = 800
+bytecode_hash = "none"
+fs_permissions = [
+	{ access = "read", path = "./deployments"},
+	{ access = "read", path = "./out"},
+]
+
+[rpc_endpoints]
+mumbai = "https://polygon-testnet.public.blastapi.io"
+bl_chain = "https://ethnode.test.competentit.ru/"

@@ -1,0 +1,60 @@
+include:
+  - template: Workflows/MergeRequest-Pipelines.gitlab-ci.yml
+
+cache: &cache
+  key:
+    files:
+      - ./yarn.lock
+      - ./.yarnrrc.yml
+  paths:
+    - ./.yarn/cache/
+  policy: pull
+
+default:
+  image: ghcr.io/exitatmosphere/forge-template-docker:latest
+  tags:
+    - build-solidity
+  before_script:
+    - YARN_CHECKSUM_BEHAVIOR=update yarn
+    - yarn install --immutable
+
+stages:
+  - build
+  - lint
+  - test
+
+build:
+  stage: build
+  script:
+    - yarn run build
+  cache:
+    <<: *cache
+    policy: pull-push
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - ./out/
+
+test:
+  stage: test
+  needs: ["build"]
+  cache:
+    <<: *cache
+  script:
+    - yarn run test
+
+coverage:
+  stage: test
+  needs: ["build"]
+  cache:
+    <<: *cache
+  script:
+    - yarn run coverage
+
+lint:
+  stage: lint
+  needs: []
+  cache:
+    <<: *cache
+  script:
+    - yarn run lint

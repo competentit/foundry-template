@@ -1,0 +1,24 @@
+name: Question
+description: Вопросы
+title: "[ Question  ]: - "
+body:
+  - type: textarea
+    id: question-description
+    attributes:
+      label: Описание вопроса
+      description: Дайте описание вопроса
+      placeholder: "Пример: Мета данные хранить в IPFS или на кошельке?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: blocked-tasks
+    attributes:
+      label: Tasks
+      description: Перечислить задачи
+      placeholder: |
+        Пример: 
+        - [ ] Task 1
+        - [ ] Task 2
+    validations:
+      required: true

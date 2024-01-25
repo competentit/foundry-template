@@ -1,0 +1,86 @@
+name: Bug Report
+description: Файл отчета об ошибке
+title: "[Bug]: -"
+labels: ["bug", "triage"]
+body:
+  # 1
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: В чем проблема?
+      description: Дайте общее описание проблемы?
+      placeholder: Кратко опишите обнаруженную ошибку
+    validations:
+      required: true
+  # 2
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги для воспроизведения поведения
+      description: Перечислите в правильном порядке, как вы пришли к подобному поведению функционала
+      placeholder: |
+        Пример: 
+        1) Нажал на кнопку 
+        2) Ввел в поле значение
+        3) ...
+    validations:
+      required: true
+  # 3
+  - type: textarea
+    id: current-behaviour
+    attributes:
+      label: Какое текущее поведение функционала?
+      description: Результат, полученный после прохождения шагов к воспроизведению
+      placeholder:
+    validations:
+      required: true
+  # 4
+  - type: textarea
+    id: expect-behaviour
+    attributes:
+      label: Какое ожидаемое поведение функционала?
+      description: Результат, который вы хотели получить после прохождения шагов к воспроизведению
+      placeholder:
+    validations:
+      required: true
+  # 5
+  - type: markdown
+    attributes:
+      value: "## Пример"
+  # pub
+  - type: input
+    id: public-key
+    attributes:
+      label: Публичный ключ используемого аккаунта
+      description: Заполните форму, вставив ключ аккаунта, от имени которого совершались транзакции
+      placeholder: "0xC5337F68DC963E0BaFe6DCAf8F32002D9056F604"
+    validations:
+      required: true
+  # private
+  - type: input
+    id: private-key
+    attributes:
+      label: Приватный ключ используемого аккаунта
+      description: Заполните форму, вставив приватный ключ
+      placeholder: 0xe6fda240c27497f6a6644565ecae273bc78pff28c2Аa1a5ed65ed0ee4dce1d96
+    validations:
+      required: true
+  # other
+  - type: textarea
+    id: additional
+    attributes:
+      label: Дополнительная информация
+      description: Приведите дополнительную информацию для воспроизведения текущего поведения
+      placeholder: |
+        id, апрувы и т.д.
+    validations:
+      required: false
+  # 6
+  - type: textarea
+    id: other-info
+    attributes:
+      label: Логи, скриншоты, видео и т.д.
+      description: артефакты для анализа
+      placeholder:
+    validations:
+      required: false

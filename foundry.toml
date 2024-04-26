@@ -9,5 +9,6 @@ fs_permissions = [
 ]
 
 [rpc_endpoints]
+amoy = "https://rpc-amoy.polygon.technology"
 mumbai = "https://polygon-testnet.public.blastapi.io"
 bl_chain = "https://ethnode.test.competentit.ru/"

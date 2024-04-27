@@ -24,8 +24,8 @@ async function main() {
     execSync(
       `forge script ${filePath} --rpc-url ${CHAIN_NAME} --broadcast \
       --private-key ${DEPLOYER_PRIVATE_KEY} \
-      ${LEGACY === "true" && `--legacy`} \
-      ${GAS_PRICE && `--with-gas-price ${GAS_PRICE}`}`,
+      ${LEGACY === "true" ? `--legacy` : ``} \
+      ${GAS_PRICE ? `--with-gas-price ${GAS_PRICE}` : ``}`,
       { stdio: "inherit" },
     );
     execSync(`forge-deploy sync`, { stdio: "inherit" });

@@ -3,7 +3,7 @@ const fs = require("fs");
 const dotenv = require("dotenv");
 
 dotenv.config();
-const { CHAIN_NAME, DEPLOYER_PRIVATE_KEY, GAS_PRICE, DEPLOY_RESET } =
+const { CHAIN_NAME, DEPLOYER_PRIVATE_KEY, GAS_PRICE, LEGACY, DEPLOY_RESET } =
   process.env;
 
 const scriptsFolder = "./script/deploy/";
@@ -24,6 +24,7 @@ async function main() {
     execSync(
       `forge script ${filePath} --rpc-url ${CHAIN_NAME} --broadcast \
       --private-key ${DEPLOYER_PRIVATE_KEY} \
+      ${LEGACY === "true" && `--legacy`} \
       ${GAS_PRICE && `--with-gas-price ${GAS_PRICE}`}`,
       { stdio: "inherit" },
     );
